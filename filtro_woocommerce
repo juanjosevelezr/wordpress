@@ -1,0 +1,7 @@
+function filter_woocommerce_show_admin_notice( $true, $notice ) {
+    if ( $notice === 'uploads_directory_is_unprotected' )
+        return false;
+    // Default
+    return $true;
+}
+add_filter( 'woocommerce_show_admin_notice', 'filter_woocommerce_show_admin_notice', 10, 2 );
